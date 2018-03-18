@@ -3,10 +3,23 @@ var db = new sqlite3.Database('./gold_medals.sqlite');
 
 /*
 Returns a SQL query string that will create the Country table with four columns: name (required), code (required), gdp, and population.
+
+
+Returns the SQL command that will create a table, named `Country` with the following columns:
+ - `name` a required text field.
+ - `code` a required text field.
+ - `gdp` an integer.
+ - `population` an integer.
+
 */
 
 const createCountryTable = () => {
-  return;
+  let query = "CREATE TABLE Country = ( 
+  name TEXT NOT NULL,
+  code TEXT NOT NULL,
+  gdp INTEGER,
+  population INTEGER;";
+  return query;
 };
 
 /*
