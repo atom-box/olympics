@@ -14,11 +14,11 @@ Returns the SQL command that will create a table, named `Country` with the follo
 */
 
 const createCountryTable = () => {
-  let query = "CREATE TABLE Country = ( 
+  const query = `CREATE TABLE Country  ( 
   name TEXT NOT NULL,
   code TEXT NOT NULL,
   gdp INTEGER,
-  population INTEGER;";
+  population INTEGER);`;
   return query;
 };
 
@@ -27,15 +27,33 @@ Returns a SQL query string that will create the GoldMedal table with ten columns
 */
 
 const createGoldMedalTable = () => {
-  return;
+const query = `CREATE TABLE GoldMedal (
+   id INTEGER NOT NULL, 
+   year INTEGER NOT NULL, 
+   city  TEXT NOT NULL, 
+   season TEXT NOT NULL, 
+   name  TEXT NOT NULL, 
+   country  TEXT  NOT NULL, 
+   gender  TEXT  NOT NULL, 
+   sport   TEXT  NOT NULL, 
+   discipline  TEXT  NOT NULL,
+   event TEXT   NOT NULL
+  )`;
+  return query;
 };
 
 /*
 Returns a SQL query string that will find the number of gold medals for the given country.
 */
 
+
+//   whoa  NEED TO FIND SYNTAX 
 const goldMedalNumber = country => {
-    return;
+  const query = `
+    SELECT event count as 
+    FROM GoldMedal
+  `;
+    return query;
 };
 
 /*
