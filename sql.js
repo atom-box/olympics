@@ -50,8 +50,8 @@ Returns a SQL query string that will find the number of gold medals for the give
 //   whoa  NEED TO FIND SYNTAX 
 const goldMedalNumber = country => {
   const query = `
-    SELECT event count as 
-    FROM GoldMedal
+    SELECT event, COUNT(*) AS count  
+    FROM GoldMedal WHERE country = ${country};
   `;
     return query;
 };
