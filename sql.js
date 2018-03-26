@@ -28,7 +28,7 @@ Returns a SQL query string that will create the GoldMedal table with ten columns
 
 const createGoldMedalTable = () => {
 const query = `CREATE TABLE GoldMedal (
-   id INTEGER NOT NULL, 
+   id INTEGER PRIMARY KEY, 
    year INTEGER NOT NULL, 
    city  TEXT NOT NULL, 
    season TEXT NOT NULL, 
@@ -49,7 +49,7 @@ Returns a SQL query string that will find the number of gold medals for the give
 
 //   whoa  NEED TO FIND SYNTAX 
 const goldMedalNumber = country => {
-  const query = `
+  let query = `
     SELECT event, COUNT(*) AS count  
     FROM GoldMedal WHERE country = ${country};
   `;
