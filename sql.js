@@ -47,11 +47,11 @@ Returns a SQL query string that will find the number of gold medals for the give
 */
 
 
-//   whoa  NEED TO FIND SYNTAX 
+//   MONDAY MARCH 26 "THIS SHOULD BE SORT OF CLOSE...I finally looked up the syntax"
 const goldMedalNumber = country => {
   let query = `
-    SELECT event, COUNT(*) AS count  
-    FROM GoldMedal WHERE country = ${country};
+    SELECT COUNT(*) AS "count"  
+    FROM GoldMedal WHERE country = "${country}";
   `;
     return query;
 };
@@ -62,6 +62,7 @@ won the most summer medals, along with the number of medals aliased to 'count'.
 */
 
 const mostSummerWins = country => {
+  `SELECT count(*) WHERE `
   return;
 };
 
