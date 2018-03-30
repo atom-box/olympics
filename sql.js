@@ -176,6 +176,12 @@ Returns a SQL query string that will find the medals a country has won
 optionally ordered by the given field in the specified direction.
 */
 
+/*
+// 1 select * from GoldMedal WHERE country = "Canada";
+// 2 select * from GoldMedal WHERE country = "Canada" 
+ORDER BY city asc;
+*/
+
 const orderedMedals = (country, field, sortAscending) => {
   return;
 };
