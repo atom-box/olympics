@@ -164,7 +164,11 @@ Returns a SQL query string that will find the athlete with the most medals.
 */
 
 const mostMedaledAthlete = country => {
-  return;
+  const query = `
+    SELECT name, count(*) as count FROM GoldMedal 
+  WHERE country = "${country}" GROUP BY name 
+  ORDER BY count DESC LIMIT 1;`;
+  return query;
 };
 
 /*
