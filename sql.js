@@ -202,9 +202,6 @@ const orderedMedals = (country, field, sortAscending) => {
     }    
     // choose ascending/descending
   let field1 = args[1]; 
-  //field1 = "country";
-  //field33 = "asc"; 
-  // TEST -- REMOVE
   field2 = 'asc';
     const query = `select * from GoldMedal WHERE country = "Canada" 
       ORDER BY ${field1} ${field2};`;
