@@ -183,8 +183,38 @@ ORDER BY city asc;
 */
 
 const orderedMedals = (country, field, sortAscending) => {
-  return;
-};
+  let args = Array.from(arguments);
+
+  if (!args.length){
+    // no args given
+    return `select * from GoldMedal;`;
+  } else if (1 === args.length){
+    // just a country entered
+    const query = `select * from GoldMedal WHERE country = 
+    "${country}";`;
+    return query;
+  } else  {
+    // more than 1 arg present
+    if (args[2]){
+      let field2 = 'ASC';
+    } else {
+      let field2 = 'DESC';
+    }    
+    // choose ascending/descending
+  let field1 = args[1]; 
+  //field1 = "country";
+  //field33 = "asc"; 
+  // TEST -- REMOVE
+  field2 = 'asc';
+    const query = `select * from GoldMedal WHERE country = "Canada" 
+      ORDER BY ${field1} ${field2};`;
+    console.log( `select * from GoldMedal WHERE country = "Canada" 
+      ORDER BY ${field1} ${field2};`);
+    return query
+  }
+
+  };
+
 
 /*
 Returns a SQL query string that will find the sports a country has
