@@ -3,22 +3,29 @@
 // Throw an error and catch it
 
 
-// next 
-// write a Python style, modern ECMA6 for-loop
-// implement from memory error throw - catch
-
+// next at Burger King
+// write one function with all this: throw/catch(error)-return followed by the array behavior
 
 
 function fireworks(a){
-	let tigers = [6, 4, 33]; 
-	let mudhens = Array.from(tigers);
+	let mudhens = [];
+	console.log("==========");
+	try {
+		mudhens = Array.from(a);
+	} catch(error) {
+		mudhens = "warning!";
+		//return; 
+	}
 	for(let x of mudhens){
 		console.log(`Kapow, ${x}`);
 	}
 }
 
-fireworks();
+fireworks("woof");
 fireworks(3, "yeah");
+fireworks();
+fireworks(undefined);
+fireworks([3, "yeah"]);
 
 // calling this "ent.js" because my mnemonic:
 
