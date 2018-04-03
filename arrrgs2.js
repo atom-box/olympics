@@ -1,24 +1,25 @@
+// Rearrange try, catch, printf statements, don't change functionality too much.  version 2 of args catcher.
+
 "use strict";
 
 
 const checker=(a, b, c)=>{
-	let length1;
+	console.log(`^^^^^`);
+	let someArgs;
 	try {
-		length1 = Array.from(undefined);
+		someArgs = Array.from(arguments);
 	} catch(error){
-		console.log(`Caught this _${error}_ but kept going.`);
-		length1 = 0;
+		console.log("Pickle.")
 	}
-}
+	console.log(`Your array has _${someArgs}_`);
+};
+
+checker("wren");
+checker(["wren", "horse"]); 
+checker();
+checker(2);
 
 
-console.log(`Hey the array length result is now _${checker()}_`);
-console.log(`Hey the array length result is now _${checker(3,2)}_`);
 
-
-
-
-
-// this seems to work
 
 // error catch for undefined args
