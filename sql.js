@@ -183,25 +183,25 @@ ORDER BY city asc;
 */
 
 const orderedMedals = (country, field, sortAscending) => {
-  let args = Array.from(arguments);
 
-  if (!args.length){
+  if (typeof country == 'undefined'){
     // no args given
-    return `select * from GoldMedal;`;
-  } else if (1 === args.length){
+    console.log("Problem in line 189!");
+    return;    
+  } else if (typeof field == 'undefined'){
     // just a country entered
     const query = `select * from GoldMedal WHERE country = 
-    "${country}";`;
+    "${country}";`;  //fix
     return query;
-  } else  {
-    // more than 1 arg present
-    if (args[2]){
-      let field2 = 'ASC';
-    } else {
-      let field2 = 'DESC';
-    }    
-    // choose ascending/descending
-  let field1 = args[1]; 
+  } else {
+    if(typeof sortAscending == 'undefined'){
+      sortAscending = false;
+    }
+    const query = `select * from GoldMedal WHERE country = "${country}";`;  //fix
+    return query;
+  }
+};
+/*  THIS IS YOUR MAN !!
   field2 = 'asc';
     const query = `select * from GoldMedal WHERE country = "Canada" 
       ORDER BY ${field1} ${field2};`;
@@ -211,7 +211,7 @@ const orderedMedals = (country, field, sortAscending) => {
   }
 
   };
-
+*/
 
 /*
 Returns a SQL query string that will find the sports a country has
