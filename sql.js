@@ -186,18 +186,30 @@ const orderedMedals = (country, field, sortAscending) => {
 
   if (typeof country == 'undefined'){
     // no args given
+
     console.log("Problem in line 189!");
     return;    
   } else if (typeof field == 'undefined'){
     // just a country entered
+    // therefore query for just country
+
     const query = `select * from GoldMedal WHERE country = 
     "${country}";`;  //fix
     return query;
   } else {
+    // country & field entered
+    // therefore query for each
+
     if(typeof sortAscending == 'undefined'){
       sortAscending = false;
+      // edge case 2 args given but not a 3rd
     }
-    const query = `select * from GoldMedal WHERE country = "${country}";`;  //fix
+    let sortStyle = "";
+    if (sortAscending){sortStyle = "ASC"} else {sortStyle = "DESC"}      
+      // sets the word for sort-direction
+
+    const query = `select * from GoldMedal WHERE country = "${country}" ORDER BY ${field} SORT ${sortStyle};`;  //fix 
+    // query sets country, field, AND direction
     return query;
   }
 };
