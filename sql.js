@@ -183,7 +183,9 @@ ORDER BY city asc;
 */
 
 const orderedMedals = (country, field, sortAscending) => {
-
+  //country = "Sweden";
+  //field = "gender";
+  //sortAscending = true;
   if (typeof country == 'undefined'){
     // no args given
 
@@ -200,7 +202,10 @@ const orderedMedals = (country, field, sortAscending) => {
     // country & field entered
     // therefore query for each
 
-    if(typeof sortAscending == 'undefined'){
+    //sortAscending = "bologna";
+    // Einstein did it
+    
+    if(typeof sortAscending != 'boolean'){
       sortAscending = false;
       // edge case 2 args given but not a 3rd
     }
@@ -208,7 +213,7 @@ const orderedMedals = (country, field, sortAscending) => {
     if (sortAscending){sortStyle = "ASC"} else {sortStyle = "DESC"}      
       // sets the word for sort-direction
 
-    const query = `select * from GoldMedal WHERE country = "${country}" ORDER BY ${field} SORT ${sortStyle};`;  //fix 
+    const query = `select * from GoldMedal WHERE country = "${country}" ORDER BY ${field}  ${sortStyle};`;  //fix 
     // query sets country, field, AND direction
     return query;
   }
