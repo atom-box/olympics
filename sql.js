@@ -234,15 +234,16 @@ const orderedSports = (country, field, sortAscending) => {
   const query = 
   `
   DROP VIEW IF EXISTS our_country; 
-DROP VIEW IF EXISTS todos;
-create view todos as
-select count(*) as grand from GoldMedal where country = ${country};
+  DROP VIEW IF EXISTS todos;
 
-create view our_country as
-select sport as sport1, count(*) as count1 
-from GoldMedal where country = ${country} group by sport ;
+  create view todos as
+  select count(*) as grand from GoldMedal where country = ${country};
 
-select sport1, count1, count1*100/grand from todos , our_country;
+  create view our_country as
+  select sport as sport1, count(*) as count1 
+  from GoldMedal where country = ${country} group by sport ;
+
+  select sport1, count1 as count, count1 from todos , our_country;
   `;
   /*
   ` DROP VIEW IF EXISTS todos;
