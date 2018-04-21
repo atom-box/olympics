@@ -231,20 +231,27 @@ aliased as 'percent'. Optionally ordered by the given field in the specified dir
 */
 
 const orderedSports = (country, field, sortAscending) => {
-  const query = 
+
+    const query = `select * from GoldMedal WHERE country = 
+    "${country}" GROUP BY sport;`;  //fix
+
+    return query;    // DON'T LOSE THIS
+
+/*
   `
   DROP VIEW IF EXISTS our_country; 
   DROP VIEW IF EXISTS todos;
 
   create view todos as
-  select count(*) as grand from GoldMedal where country = ${country};
+  select count(*) as grand from GoldMedal where country = "${country}";
 
   create view our_country as
   select sport as sport1, count(*) as count1 
-  from GoldMedal where country = ${country} group by sport ;
+  from GoldMedal where country = "${country}"" group by sport ;
 
-  select sport1, count1 as count, count1 from todos , our_country;
+  select sport1 as sport, country1 as count from our_country;
   `;
+*/
   /*
   ` DROP VIEW IF EXISTS todos;
     DROP VIEW IF EXISTS some;
@@ -258,7 +265,7 @@ const orderedSports = (country, field, sortAscending) => {
     SELECT count(*) AS count, 100*count(GoldMedal.name)/todos.denominator AS percent 
     FROM todos, some, GoldMedal GROUP BY sport;
     `;*/
-  return query;
+
   }
 
 module.exports = {
