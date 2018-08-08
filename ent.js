@@ -1,11 +1,8 @@
 // Evan mistergenest@twitter April 2, 2018
-// SIMPLE TYPING FROM MEMORY: 
 // Throw an error and catch it
+// just a vanilla j.s. sandbox snippet!  From memory. 
 
-
-// next at Burger King
-// write one function with all this: throw/catch(error)-return followed by the array behavior
-
+// DON'T EDIT.  THE FIVE EXAMPLES ARE USEFUL AT BOTTOM
 
 function fireworks(a){
 	let mudhens = [];
@@ -13,7 +10,7 @@ function fireworks(a){
 	try {
 		mudhens = Array.from(a);
 	} catch(error) {
-		mudhens = "warning!";
+		console.log('sleep');
 		//return; 
 	}
 	for(let x of mudhens){
@@ -21,11 +18,13 @@ function fireworks(a){
 	}
 }
 
-fireworks("woof");
-fireworks(3, "yeah");
-fireworks();
-fireworks(undefined);
-fireworks([3, "yeah"]);
+
+// THE FOLLOWING ARE ALL SUCCESFUL
+fireworks("woof"); 		// works.  gives w-o-o-f
+fireworks(3, "woof"); 	// not work.   error is 100% silent!
+fireworks();			// not work.  runs the code in CATCH
+fireworks(undefined);	// not work.  runs the code in catch
+fireworks([3, "woof"]);	// works. gives 3 - woof
 
 // calling this "ent.js" because my mnemonic:
 
