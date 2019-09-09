@@ -1,28 +1,3 @@
-# todos
-down to four errors!
-final function is something.  
-1st
-
-DUH -- YOUR SYNTAX NEEDED QUOTES AROUND ${}
-
-Start query syntax over again.  Workshop a query that gives correct number of lines, in a column aliased SPORTS.
-Change the query to NO MATH.
-Make the final function return a NON ZERO count, aliased, even if wrong #.
-
-Play with length of null in the REPL node
-GOAL BY 945   FIGURE A LOGIC STATEMENT TO ALLOW undefined IN TH E PIPELINE, else search on web.  pomodoro time.    
-Fix the Ordered Medals. Recognize the number of args incoming so you can create if-else logic.  Address the incoming 1 or 3 args problem.   
-
-# Project notes for Codecademy Gold-Medal-Metrics
-
-# Next Commits
-
-# Goofs and their remedies
-# Commits and explanations
-
-_notice this_
-Top of the git page allows you to specify *a website for this project*.  You don't suppose...
-
 # Done!
 3/19 Solution:  installed *db Browser for SQLite* Issue: need a sandbox to try the queries.
 3/26/2018 Follow DETAILS.  The table is only failing because you didn't put a primary key AS YOU WERE INSTRUCTED TO DO.
